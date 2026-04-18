@@ -26,3 +26,6 @@ dist/exercises.csv: dist/exercises.json
 		# requires in2csv which is part of
 		# https://csvkit.readthedocs.io/
 		in2csv ./dist/exercises.json > $@
+
+dist/exercises.de.json: dist/exercises.json translations/exercise-names.de.json scripts/build-de-exercises.mjs
+		node ./scripts/build-de-exercises.mjs

@@ -65,6 +65,28 @@ make dist/exercises.json
 ```
 _Note: requires [jq](https://stedolan.github.io/jq/)_
 
+#### German-enriched JSON (`dist/exercises.de.json`)
+
+This fork includes an optional build step that adds German display fields while preserving all original English fields:
+
+- `name_de`
+- `force_de`
+- `level_de`
+- `mechanic_de`
+- `equipment_de`
+- `primaryMuscles_de`
+- `secondaryMuscles_de`
+- `category_de`
+
+Run:
+
+```sh
+make dist/exercises.de.json
+```
+
+Name translations are maintained in `translations/exercise-names.de.json`.
+Any missing name translation falls back to the original English value.
+
 #### Importing into PostgreSQL
 To combine all `JSON` files into [Newline Delimeted JSON](http://ndjson.org/) suitable for import into PostgreSQL use the following make task
 
